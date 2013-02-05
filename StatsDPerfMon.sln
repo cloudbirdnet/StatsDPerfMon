@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatsDPerfMon", "StatsDPerfMon\StatsDPerfMon.csproj", "{EE7F6F48-1F5A-4551-9CA1-D6FE0AACAFBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A2717727-B832-4B16-A8B2-21EEA5CD6CDC}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StatsDPerfMon.ExampleHost", "StatsDPerfMon.ExampleHost\StatsDPerfMon.ExampleHost.csproj", "{7890269D-0A92-4CAD-AF97-0768766A9F9D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EE7F6F48-1F5A-4551-9CA1-D6FE0AACAFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE7F6F48-1F5A-4551-9CA1-D6FE0AACAFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE7F6F48-1F5A-4551-9CA1-D6FE0AACAFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE7F6F48-1F5A-4551-9CA1-D6FE0AACAFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7890269D-0A92-4CAD-AF97-0768766A9F9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7890269D-0A92-4CAD-AF97-0768766A9F9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7890269D-0A92-4CAD-AF97-0768766A9F9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7890269D-0A92-4CAD-AF97-0768766A9F9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
