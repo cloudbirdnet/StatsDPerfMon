@@ -49,7 +49,7 @@ namespace StatsDPerfMon
 			{
 				var counter = keyValuePair.Value;
 				var statsName = keyValuePair.Key;
-				statsD.Gauge(statsName, (long)counter.NextValue());
+				statsD.Gauge(statsName, counter.NextValue());
 			}
 		}
 

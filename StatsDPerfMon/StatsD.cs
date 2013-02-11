@@ -8,15 +8,15 @@ namespace StatsDPerfMon
 {
 	internal interface IStatsD : IDisposable
 	{
-		bool Gauge(string key, long value, double sampleRate = 1);
+		bool Gauge(string key, double value, double sampleRate = 1);
 		IDisposable Timing(string key, double sampleRate = 1);
-		bool Timing(string key, long value, double sampleRate = 1);
-		bool Decrement(string key, int magnitude = -1, double sampleRate = 1);
+		bool Timing(string key, double value, double sampleRate = 1);
+		bool Decrement(string key, double magnitude = -1, double sampleRate = 1);
 		bool Decrement(params string[] keys);
-		bool Decrement(int magnitude, params string[] keys);
-		bool Decrement(int magnitude, double sampleRate, params string[] keys);
-		bool Increment(string key, int magnitude = 1, double sampleRate = 1);
-		bool Increment(int magnitude, double sampleRate, params string[] keys);
+		bool Decrement(double  magnitude, params string[] keys);
+		bool Decrement(double magnitude, double sampleRate, params string[] keys);
+		bool Increment(string key, double magnitude = 1, double sampleRate = 1);
+		bool Increment(double magnitude, double sampleRate, params string[] keys);
 	}
 
 	internal class StatsD : IStatsD
@@ -31,9 +31,9 @@ namespace StatsDPerfMon
 			this.prefix = prefix;
 		}
 
-		public bool Gauge(string key, long value, double sampleRate = 1)
+		public bool Gauge(string key, double value, double sampleRate = 1)
 		{
-			return Send(sampleRate, String.Format("{0}:{1:d}|g", key, value));
+			return Send(sampleRate, String.Format("{0}:{1}|g", key, value));
 		}
 
 		public IDisposable Timing(string key, double sampleRate = 1)
@@ -46,12 +46,12 @@ namespace StatsDPerfMon
 				});
 		}
 
-		public bool Timing(string key, long value, double sampleRate = 1)
+		public bool Timing(string key, double value, double sampleRate = 1)
 		{
-			return Send(sampleRate, String.Format("{0}:{1:d}|ms", key, value));
+			return Send(sampleRate, String.Format("{0}:{1}|ms", key, value));
 		}
 
-		public bool Decrement(string key, int magnitude = -1, double sampleRate = 1)
+		public bool Decrement(string key, double magnitude = -1, double sampleRate = 1)
 		{
 			magnitude = magnitude < 0 ? magnitude : -magnitude;
 			return Increment(key, magnitude, sampleRate);
@@ -62,25 +62,25 @@ namespace StatsDPerfMon
 			return Increment(-1, 1.0, keys);
 		}
 
-		public bool Decrement(int magnitude, params string[] keys)
+		public bool Decrement(double magnitude, params string[] keys)
 		{
 			magnitude = magnitude < 0 ? magnitude : -magnitude;
 			return Increment(magnitude, 1.0, keys);
 		}
 
-		public bool Decrement(int magnitude, double sampleRate, params string[] keys)
+		public bool Decrement(double magnitude, double sampleRate, params string[] keys)
 		{
 			magnitude = magnitude < 0 ? magnitude : -magnitude;
 			return Increment(magnitude, sampleRate, keys);
 		}
 
-		public bool Increment(string key, int magnitude = 1, double sampleRate = 1)
+		public bool Increment(string key, double magnitude = 1, double sampleRate = 1)
 		{
 			var stat = String.Format("{0}:{1}|c", key, magnitude);
 			return Send(stat, sampleRate);
 		}
 
-		public bool Increment(int magnitude, double sampleRate, params string[] keys)
+		public bool Increment(double magnitude, double sampleRate, params string[] keys)
 		{
 			return Send(sampleRate, keys.Select(key => String.Format("{0}:{1}|c", key, magnitude)).ToArray());
 		}
