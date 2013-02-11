@@ -12,7 +12,7 @@ namespace StatsDPerfMon
 
 		public PerfCounterService(Func<IEnumerable<CounterDefinition>> getDefinitions, string statsDHost, int statsDPort = 8125, string statsPrefix = null)
 		{
-			defaultTickTimeSpan = TimeSpan.FromSeconds(5);
+			defaultTickTimeSpan = TimeSpan.FromSeconds(10);
 			initialDelay = TimeSpan.FromSeconds(10);
 
 			statsPrefix = statsPrefix ?? string.Format("monitor.{0}.", Environment.MachineName);
