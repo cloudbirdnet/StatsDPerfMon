@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="StatsDPerfMon.nuspec" />
     <Compile Include="CounterDefinition.cs" />
     <Compile Include="PerfCounterService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

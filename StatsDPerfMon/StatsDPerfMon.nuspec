@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <authors>CloudBird</authors>
+    <owners>CloudBird</owners>
+    <description>A simple service that sends performance counter values to StatsD</description>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>
