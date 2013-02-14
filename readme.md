@@ -6,7 +6,8 @@ StatsDPerfMon is a simple service that periodically polls a list of performance 
 Usage
 -----
 
-An example host built using TopShelf can be found in the repo under StatsDPerfMon.ExampleHost.
+StatsDPerfMon is available as a [nuget package](https://nuget.org/packages/StatsDPerfMon/)
+and an example host built using TopShelf can be found in the repo under StatsDPerfMon.ExampleHost.
 
 License
 -------
