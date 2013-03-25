@@ -119,7 +119,7 @@ namespace StatsDPerfMon
 
 		protected void DoSend(string stat)
 		{
-			var data = Encoding.Default.GetBytes(prefix + stat + "\n");
+			var data = Encoding.Default.GetBytes(prefix + stat);
 
 			udpClient.Send(data, data.Length);
 		}
