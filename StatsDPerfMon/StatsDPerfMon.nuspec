@@ -5,7 +5,10 @@
     <version>$version$</version>
     <authors>CloudBird</authors>
     <owners>CloudBird</owners>
+	<projectUrl>https://github.com/cloudbirdnet/StatsDPerfMon</projectUrl>
+	<licenseUrl>https://raw.github.com/cloudbirdnet/StatsDPerfMon/master/license.txt</licenseUrl>
     <description>A simple service that sends performance counter values to StatsD</description>
+	<tags>statsd monitoring performance counters</tags>
     <dependencies>
     </dependencies>
   </metadata>
